@@ -1,0 +1,37 @@
+body {
+  background-color: rgb(237, 237, 248);
+}
+.contenedorTabla {
+  max-width: 90%;
+
+  display: table;
+  margin-right: auto;
+  margin-left: auto;
+
+  font-size: medium;
+
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #000;
+  vertical-align: text-top;
+  max-width: fit-content;
+  min-width: 5%;
+}
+
+.separador {
+  border-bottom: 2px solid #ff0000;
+  border-left: 2px solid #ff0000;
+}
+
+h1 {
+  text-align: center;
+
+  font-weight: bold;
+}
