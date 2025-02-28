@@ -20,18 +20,35 @@ table {
 td,
 th {
   border: 1px solid #000;
-  vertical-align: text-top;
-  max-width: fit-content;
-  min-width: 5%;
+  vertical-align: center;
+  width: fit-content;
+
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
 }
 
-.separador {
-  border-bottom: 2px solid #ff0000;
-  border-left: 2px solid #ff0000;
+th th,
+td {
+  width: 50%;
+}
+
+td.no-padding,
+th.no-padding {
+  padding: 0;
+}
+
+.borde_inferior_rojo {
+    border-bottom: 3px solid #ff0000;
 }
 
 h1 {
   text-align: center;
-
   font-weight: bold;
+  margin: 2.5%;
+}
+
+ul {
+  margin-bottom: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
