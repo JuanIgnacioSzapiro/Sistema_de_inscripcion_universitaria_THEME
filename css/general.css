@@ -1,20 +1,24 @@
 /* general */
 body {
-  background-color: rgb(237, 237, 248);
-  
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
+  background-color: rgb(252, 252, 254);
+
+  font-size: 1.8vmin;
+
+  font-family: "Arial", sans-serif;
   margin: 0;
-  padding: 2.5%;
+  padding: 2.5% 6.5% 2.5% 6.5%;
+
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  body {
+    font-size: 100%;
+  }
 }
 
 h1 {
-  text-align: center;
   font-weight: bold;
-}
-
-h2 {
-  text-align: center;
 }
 
 /* tablas */
@@ -24,10 +28,6 @@ h2 {
   display: table;
   margin-right: auto;
   margin-left: auto;
-
-  font-size: medium;
-
-  text-align: center;
 
   padding-bottom: 2.5%;
 }
@@ -78,7 +78,6 @@ table ul {
 
 /* Títulos y subtítulos */
 .titulos-y-subtitulos {
-  text-align: center;
   margin-bottom: 30px;
 }
 
@@ -123,7 +122,6 @@ table ul {
   display: flex;
   flex-direction: column;
   justify-content: center; /* centra verticalmente */
-  text-align: center; /* texto centrado */
 
   overflow: auto;
 
@@ -163,7 +161,6 @@ table ul {
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 1.2em;
   pointer-events: none;
   z-index: 1;
 }
@@ -198,13 +195,11 @@ table ul {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  text-align: center;
   justify-content: center;
 }
 
 .item-titulo {
   margin: 0 0 10px 0;
-  font-size: 160%;
   white-space: normal;
   -webkit-box-orient: vertical;
   line-height: 1.4;
@@ -213,7 +208,6 @@ table ul {
 }
 
 .item-descripcion {
-  font-size: 0.9em;
   color: #666;
   margin: 0;
   line-height: 1.4;
@@ -223,7 +217,6 @@ table ul {
 .error,
 .sin-elementos,
 .sin-tipos {
-  text-align: center;
   padding: 20px;
   color: #666;
 }
@@ -236,14 +229,15 @@ table ul {
 
   .galeria-grid,
   .galeria-grid-sin-gap {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: auto auto auto;
+  }
+  .galeria-grid {
     gap: 15px;
   }
 }
 
 @media screen and (max-width: 992px) {
-  .galeria-grid,
-  .galeria-grid-sin-gap {
+  .galeria-grid {
     gap: 10px;
   }
 
@@ -265,26 +259,14 @@ table ul {
 @media screen and (max-width: 768px) {
   .galeria-grid,
   .galeria-grid-sin-gap {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .tipo-titulo {
-    font-size: 1.8em;
-  }
-
-  .item-titulo {
-    font-size: 160%;
-  }
-
-  .item-descripcion {
-    font-size: 0.85em;
+    grid-template-columns: auto;
   }
 }
 
 @media screen and (max-width: 480px) {
   .galeria-grid,
   .galeria-grid-sin-gap {
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
   }
 
   .tipo-carrera {
@@ -306,25 +288,10 @@ table ul {
   }
 
   .tipo-titulo {
-    font-size: 1.5em;
     margin-bottom: 5px;
   }
-
-  .tipo-descripcion {
-    font-size: 0.9em;
-  }
-
-  .item-titulo {
-    font-size: 160%;
-  }
-
-  .item-descripcion {
-    font-size: 0.8em;
-  }
-
   .plan-de-carrera {
     height: 150px;
-    font-size: 1em;
   }
 }
 
@@ -340,12 +307,16 @@ table ul {
 
   .plan-de-carrera {
     height: 130px;
-    font-size: 0.9em;
   }
 }
 
-
 /* CARRERA INDIVIDUAL, SIN REGISTRARSE */
+.muesta-individual-sin-registro {
+  text-align: justify;
+}
+.centrado {
+  text-align: center;
+}
 
 /* Contenedor principal */
 .post-type-carreras {
@@ -353,7 +324,7 @@ table ul {
   margin: 0 auto;
   background: white;
   padding: 30px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Imagen */
@@ -368,38 +339,29 @@ table ul {
 /* Títulos */
 .titulo-carrera {
   color: #2c3e50;
-  font-size: 2.5em;
   margin-bottom: 15px;
   font-weight: bold;
-  text-align: center;
 }
 
 .plan-carrera {
   color: #7f8c8d;
-  font-size: 1.1em;
-  text-align: center;
   margin-bottom: 10px;
 }
 
 .tipos-de-carrera {
   color: #2980b9;
-  font-size: 1.4em;
-  text-align: center;
   margin-bottom: 30px;
 }
 
 /* Descripción */
 .descripcion-carrera {
-  font-size: 1.1em;
   line-height: 1.8;
   margin-bottom: 30px;
-  padding: 20px;
   border-radius: 4px;
 }
 
 /* Lista de condiciones */
 .profesional-en-condiciones-de-la-carrera {
-  padding-left: 20px;
   position: relative;
   margin-bottom: 10px;
 }
@@ -415,13 +377,12 @@ table ul {
   width: 100%;
   border-collapse: collapse;
   margin: 30px 0;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .tabla-materias th,
 .tabla-materias td {
   padding: 12px;
-  text-align: left;
   border: 1px solid #ddd;
 }
 
@@ -448,9 +409,15 @@ table ul {
   transition: background-color 0.3s;
 }
 
-.link.carreras { background-color: #27ae60; }
-.link.horarios { background-color: #e67e22; }
-.link.mesas-de-examen { background-color: #c0392b; }
+.link.carreras {
+  background-color: #27ae60;
+}
+.link.horarios {
+  background-color: #e67e22;
+}
+.link.mesas-de-examen {
+  background-color: #c0392b;
+}
 
 .resolucion-ministerial:hover,
 .link:hover {
@@ -459,15 +426,16 @@ table ul {
 
 /* Sección de dirección y referente */
 .nombre-direccion-carrera,
-.nombre-referente-carrera {
-  font-size: 1.3em;
+.nombre-referente-carrera,
+.titulo-contactos {
   color: #2c3e50;
   margin-top: 30px;
   font-weight: bold;
 }
 
 .descripcion-direccion-carrera,
-.descripcion-referente-carrera {
+.descripcion-referente-carrera,
+.metodos-contacto {
   background-color: #f8f9fa;
   padding: 15px;
   border-left: 4px solid #2980b9;
@@ -502,23 +470,18 @@ table ul {
 /* Responsive */
 @media (max-width: 768px) {
   .post-type-carreras {
-      padding: 15px;
+    padding: 15px;
   }
-  
-  .titulo-carrera {
-      font-size: 1.8em;
-  }
-  
+
   .tabla-materias {
-      display: block;
-      overflow-x: auto;
+    display: block;
+    overflow-x: auto;
   }
-  
+
   .link,
   .resolucion-ministerial {
-      display: block;
-      margin: 10px 0;
-      text-align: center;
+    display: block;
+    margin: 10px 0;
   }
 }
 
@@ -554,7 +517,7 @@ table ul {
   left: 0;
   min-width: 200px;
   background: white;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   z-index: 1000;
   border-radius: 4px;
   overflow: hidden;
@@ -572,7 +535,6 @@ table ul {
   border-radius: 0;
   background-color: #f8f9fa;
   color: #333 !important;
-  text-align: left;
   transition: background 0.2s;
 }
 
@@ -583,16 +545,132 @@ table ul {
 /* Mobile */
 @media (max-width: 768px) {
   .dropdown-group {
-      display: block;
-      margin: 10px 0;
+    display: block;
+    margin: 10px 0;
   }
-  
+
   .dropdown-content {
-      position: static;
-      box-shadow: none;
+    position: static;
+    box-shadow: none;
   }
-  
-  .dropdown-content .link {
-      text-align: center;
+}
+
+/* DOCUMENTACION INSCRIPCIONES */
+
+.subtitulo {
+  color: rgb(28, 70, 91);
+}
+.contenedor-dividido {
+  grid-template-columns: auto auto;
+  gap: 2.5%;
+  display: inline-grid;
+}
+
+.lado-izq,
+.lado-der {
+  width: 25vw;
+  display: grid;
+}
+
+.lado-izq button,
+.lado-der button {
+  align-self: end;
+}
+
+.boton_link {
+  display: block;
+  width: 100%;
+  padding: 12px 15px;
+  margin: 0;
+  border-radius: 8px;
+  transition: background 0.2s;
+  color: #ffffff;
+  background-color: #2980b9;
+}
+.recuadrado {
+  margin-top: 1.5%;
+  border: 1px solid;
+  border-color: #9d5201;
+  padding: 1.5%;
+}
+.espaciado {
+  margin-top: 2.5%;
+  margin-bottom: 1.5%;
+}
+.pregunta {
+  font-weight: bold;
+}
+.muestra-carreras {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.muestra-carreras-solo {
+  display: grid;
+  grid-template-columns: auto;
+  width: 100%;
+  justify-content: center;
+}
+.muestra-carreras .carrera {
+  width: 25vw;
+}
+.muestra-carreras-solo .carrera {
+  padding: 1.5vh;
+}
+.subtitulo-mostrado {
+  cursor: pointer;
+  position: relative;
+  padding: 10px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  margin: 5px 0;
+  transition: background 0.3s;
+  width: 25vw;
+}
+
+.subtitulo-mostrado::after {
+  position: absolute;
+  right: 15px;
+  transition: transform 0.3s;
+}
+
+.subtitulo-mostrado.active::after {
+  transform: rotate(180deg);
+}
+
+.subtitulo-mostrado:hover {
+  background: #e9e9e9;
+}
+
+.escondido {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-top: none;
+  margin: 0 0 5px 0;
+  max-width: 25vw;
+}
+
+.subtitulo-mostrado,
+.escondido {
+  overflow: auto;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 650px) {
+  .muestra-carreras,
+  .contenedor-dividido {
+    display: grid;
+    grid-template-columns: auto;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .lado-izq,
+  .lado-der {
+    max-width: 100%;
   }
 }
