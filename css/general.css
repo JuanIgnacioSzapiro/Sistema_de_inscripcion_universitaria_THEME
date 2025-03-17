@@ -21,6 +21,10 @@ h1 {
   font-weight: bold;
 }
 
+h4 {
+  margin-top: 1.5%;
+}
+
 /* tablas */
 .contenedorTabla {
   max-width: 90%;
@@ -93,7 +97,7 @@ table ul {
 
 /* Grid de galería */
 .galeria-grid {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: auto auto auto;
   gap: 20px;
   width: 100%;
@@ -102,7 +106,7 @@ table ul {
 
 /* Grid de galería */
 .galeria-grid-sin-gap {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: auto auto auto;
   width: 100%;
   justify-content: center;
@@ -153,7 +157,7 @@ table ul {
   top: 0;
   left: 0;
   width: 100%;
-  height: 200px;
+  height: 184px;
   background-color: rgba(0, 102, 204, 0.8);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -172,7 +176,7 @@ table ul {
 /* Imágenes */
 .galeria-imagen {
   width: 100%;
-  height: 200px;
+  height: 184px;
   object-fit: cover;
   display: block;
 
@@ -180,7 +184,7 @@ table ul {
 }
 
 .galeria-imagen-placeholder {
-  height: 200px;
+  height: 184px;
   background: #f5f5f5;
   display: flex;
   align-items: center;
@@ -601,7 +605,7 @@ table ul {
   font-weight: bold;
 }
 .muestra-carreras {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: auto auto;
   gap: 20px;
   width: 100%;
@@ -609,13 +613,10 @@ table ul {
 }
 
 .muestra-carreras-solo {
-  display: grid;
+  display: inline-grid;
   grid-template-columns: auto;
   width: 100%;
   justify-content: center;
-}
-.muestra-carreras .carrera {
-  width: 25vw;
 }
 .muestra-carreras-solo .carrera {
   padding: 1.5vh;
@@ -628,7 +629,6 @@ table ul {
   border: 1px solid #ddd;
   margin: 5px 0;
   transition: background 0.3s;
-  width: 25vw;
 }
 
 .subtitulo-mostrado::after {
@@ -663,7 +663,7 @@ table ul {
 @media (max-width: 650px) {
   .muestra-carreras,
   .contenedor-dividido {
-    display: grid;
+    display: inline-grid;
     grid-template-columns: auto;
     max-width: 100%;
     justify-content: center;
