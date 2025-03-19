@@ -7,7 +7,9 @@ body {
   font-family: "Arial", sans-serif;
   margin: 0;
   padding: 2.5% 6.5% 2.5% 6.5%;
+}
 
+.cuerpo-centrado {
   text-align: center;
 }
 
@@ -27,7 +29,7 @@ h4 {
 
 /* tablas */
 .contenedorTabla {
-  max-width: 90%;
+  max-width: 60%;
 
   display: table;
   margin-right: auto;
@@ -40,19 +42,25 @@ table {
   width: 100%;
 }
 
+td {
+  width: 85%;
+}
+
+.cabecera-arrastrar {
+  position: relative;
+}
+
+tr tr:last-child {
+  border-bottom: 3px solid #ff0000;
+}
+
 td,
 th {
   border: 1px solid #000;
   vertical-align: center;
-  width: fit-content;
 
   padding-top: 2.5%;
   padding-bottom: 2.5%;
-}
-
-th th,
-td {
-  width: 50%;
 }
 
 td.no-padding,
@@ -60,9 +68,9 @@ th.no-padding {
   padding: 0;
 }
 
-.borde_inferior_rojo {
+/* .borde_inferior_rojo {
   border-bottom: 3px solid #ff0000;
-}
+} */
 
 table ul {
   margin-bottom: 0;
@@ -390,14 +398,18 @@ table ul {
   border: 1px solid #ddd;
 }
 
-.tabla-materias th {
+th {
   background-color: #2980b9;
-  color: white;
+  color: rgb(255, 255, 255);
   font-weight: bold;
 }
 
-.tabla-materias tr:nth-child(even) {
-  background-color: #f8f9fa;
+tr:nth-child(even) {
+  background-color: #eeecec;
+}
+
+tr tr:nth-child(odd) {
+  background-color: #ffffff;
 }
 
 /* Links importantes */
@@ -606,7 +618,7 @@ table ul {
 }
 .muestra-carreras {
   display: inline-grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: repeat(3, minmax(100px, 200px));
   gap: 20px;
   width: 100%;
   justify-content: center;
@@ -673,4 +685,157 @@ table ul {
   .lado-der {
     max-width: 100%;
   }
+}
+
+/*FORMULARIOS*/
+.no-opcional-comentario {
+  display: none;
+  position: absolute;
+  /* Posición absoluta respecto al padre */
+  left: 0;
+  top: 100%;
+  /* Se coloca justo debajo del elemento .no-opcional */
+  z-index: 1000;
+  width: max-content;
+  color: crimson;
+}
+
+.no-opcional:hover + .no-opcional-comentario {
+  position: relative;
+  display: contents;
+}
+
+.en-meta-box {
+  margin-top: 1.5%;
+}
+
+/* Estilos específicos dentro de .formulario */
+.formulario {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+}
+
+.formulario .en-meta-box {
+  margin-bottom: 25px;
+  padding: 15px;
+  background: #f6f7f7;
+  border: 1px solid #dcdcde;
+  border-radius: 4px;
+}
+
+.formulario label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #1d2327;
+}
+
+.formulario input[type="text"],
+.formulario input[type="date"],
+.formulario textarea,
+.formulario select {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #8c8f94;
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 0 0 transparent;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.formulario input:focus,
+.formulario textarea:focus,
+.formulario select:focus {
+  border-color: #2271b1;
+  box-shadow: 0 0 0 1px #2271b1;
+  outline: 2px solid transparent;
+}
+
+.formulario .button {
+  background: #2271b1;
+  border-color: #2271b1;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: none;
+  padding: 6px 12px;
+  border-radius: 3px;
+  border-style: solid;
+  cursor: pointer;
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+.formulario .button:hover {
+  background: #135e96;
+  border-color: #135e96;
+  color: #fff;
+}
+
+/* Checkboxes/radios sólo dentro del formulario */
+.formulario input[type="checkbox"],
+.formulario input[type="radio"] {
+  margin: 0 5px 0 0;
+  width: 16px;
+  height: 16px;
+  vertical-align: middle;
+}
+
+/* Selects específicos del formulario */
+.formulario select {
+  background: url('data:image/svg+xml;charset=US-ASCII,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M5 6l5 5 5-5 2 1-7 7-7-7z"/></svg>')
+    no-repeat right 8px center/16px 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 30px;
+}
+
+/* Descripciones dentro del formulario */
+.formulario .description {
+  font-size: 13px;
+  color: #666;
+  margin: 5px 0;
+  font-style: italic;
+}
+
+/* Elementos clonables sólo dentro del formulario */
+.formulario .clonable-container-texto {
+  background: #fff;
+  padding: 15px;
+  border: 1px solid #dcdcde;
+  margin-bottom: 15px;
+}
+
+.formulario .clonable-field-texto {
+  margin-bottom: 10px;
+}
+
+/* Mensajes obligatorios específicos */
+.formulario .no-opcional-comentario {
+  color: #d63638;
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+/* Responsive sólo para elementos del formulario */
+@media screen and (max-width: 782px) {
+  .formulario input[type="text"],
+  .formulario input[type="date"],
+  .formulario textarea,
+  .formulario select {
+    max-width: 100%;
+  }
+}
+
+.formulario .no-opcional {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px 0 0;
 }
