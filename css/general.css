@@ -1,10 +1,10 @@
 /* general */
 body {
-  background-color: rgb(252, 252, 254);
+  background-color: rgb(255, 255, 255);
 
   font-size: 1.8vmin;
 
-  font-family: "Arial", sans-serif;
+  font-family: "Gill Sans", sans-serif;
   margin: 0;
   padding: 2.5% 6.5% 2.5% 6.5%;
 }
@@ -408,12 +408,12 @@ tr:nth-child(even) {
   background-color: #eeecec;
 }
 
-tr tr:nth-child(odd) {
+tr:nth-child(odd) {
   background-color: #ffffff;
 }
 
 /* Links importantes */
-.resolucion-ministerial,
+.button,
 .link {
   display: inline-block;
   padding: 10px 20px;
@@ -435,7 +435,7 @@ tr tr:nth-child(odd) {
   background-color: #c0392b;
 }
 
-.resolucion-ministerial:hover,
+.button:hover,
 .link:hover {
   opacity: 0.9;
 }
@@ -495,7 +495,7 @@ tr tr:nth-child(odd) {
   }
 
   .link,
-  .resolucion-ministerial {
+  .button {
     display: block;
     margin: 10px 0;
   }
@@ -574,7 +574,7 @@ tr tr:nth-child(odd) {
 /* DOCUMENTACION INSCRIPCIONES */
 
 .subtitulo {
-  color: rgb(28, 70, 91);
+  color: rgb(0, 49, 73);
 }
 .contenedor-dividido {
   grid-template-columns: auto auto;
@@ -633,17 +633,23 @@ tr tr:nth-child(odd) {
 .muestra-carreras-solo .carrera {
   padding: 1.5vh;
 }
+
 .subtitulo-mostrado {
   cursor: pointer;
   position: relative;
   padding: 10px;
-  background: #f5f5f5;
+  background: #2980b9;
+  color: white;
   border: 1px solid #ddd;
-  margin: 5px 0;
+  margin: 5px auto; /* Centrado horizontal */
   transition: background 0.3s;
+  width: 25vw;
+  display: block; /* Aseguramos que es elemento de bloque */
+  text-align: center; /* Centrado de texto */
 }
 
 .subtitulo-mostrado::after {
+  content: "▼"; /* ¡Importante: agregar contenido al pseudo-elemento! */
   position: absolute;
   right: 15px;
   transition: transform 0.3s;
@@ -654,16 +660,22 @@ tr tr:nth-child(odd) {
 }
 
 .subtitulo-mostrado:hover {
-  background: #e9e9e9;
+  background: #3b94d0;
 }
 
 .escondido {
+  background: #d5e8f5;
   display: none;
   padding: 10px;
   border: 1px solid #ddd;
   border-top: none;
-  margin: 0 0 5px 0;
-  max-width: 25vw;
+  margin: 0 auto 5px; /* Centrado y margen inferior */
+  width: 25vw; /* Mismo ancho que el título */
+  box-sizing: border-box; /* Incluye bordes en el ancho */
+}
+
+.escondido a{
+  color: #1500ff;
 }
 
 .subtitulo-mostrado,
@@ -711,13 +723,10 @@ tr tr:nth-child(odd) {
 
 /* Estilos específicos dentro de .formulario */
 .formulario {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  max-width: 800px;
+  max-width: 90%;
   margin: 20px auto;
-  padding: 20px;
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.13);
+  padding: 5%;
+  border: 2px solid rgb(84, 59, 165);
 }
 
 .formulario .en-meta-box {
@@ -838,4 +847,33 @@ tr tr:nth-child(odd) {
   display: inline-block;
   vertical-align: middle;
   margin: 0 10px 0 0;
+}
+
+/* Alinear checkbox/radio con su label en la misma línea */
+.formulario input[type="checkbox"] + label,
+.formulario input[type="radio"] + label {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+.formulario input[type="checkbox"],
+.formulario input[type="radio"] {
+  vertical-align: middle;
+  margin: 0 5px 0 0;
+}
+
+.mensaje-de-error p {
+  /* Tus estilos personalizados para párrafos dentro de mensajes de error */
+  color: #ff0000;
+  font-size: 14px;
+  margin: 5px 0;
+  padding: 5px;
+  font-weight: bold;
+  /* Agrega cualquier otra propiedad CSS que necesites */
+}
+
+.mensaje-de-success {
+  background-color: #c9ffe0;
+  padding: 1.5%;
 }
