@@ -42,20 +42,20 @@ table {
   width: 100%;
 }
 
-td {
+.contenedorTabla td {
   width: 85%;
 }
 
-.cabecera-arrastrar {
+.contenedorTabla .cabecera-arrastrar {
   position: relative;
 }
 
-tr tr:last-child {
+.contenedorTabla tr tr:last-child {
   border-bottom: 3px solid #ff0000;
 }
 
-td,
-th {
+.contenedorTabla td,
+.contenedorTabla th {
   border: 1px solid #000;
   vertical-align: center;
 
@@ -63,8 +63,8 @@ th {
   padding-bottom: 2.5%;
 }
 
-td.no-padding,
-th.no-padding {
+.contenedorTabla td.no-padding,
+.contenedorTabla th.no-padding {
   padding: 0;
 }
 
@@ -72,7 +72,7 @@ th.no-padding {
   border-bottom: 3px solid #ff0000;
 } */
 
-table ul {
+.contenedorTabla table ul {
   margin-bottom: 0;
   margin-left: 50%;
   transform: translateX(-50%);
